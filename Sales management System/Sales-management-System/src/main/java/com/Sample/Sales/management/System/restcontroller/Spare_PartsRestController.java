@@ -16,35 +16,35 @@ public class Spare_PartsRestController {
     private Spare_PartsService spare_partsService;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST, headers = "Accept=application/json")
-    public Spare_Parts saveSpare_Parts(@RequestBody Spare_Parts s)
+    public Spare_Parts saveSpare_Parts(@RequestBody Spare_Parts s) throws InternalServerErrorException
     {
         spare_partsService.CreateSpareParts(s);
         return s;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET, headers = "Accept=application/json")
-    public List<Spare_Parts> getAllSpareParts(@RequestParam(defaultValue = "0")Integer pageNo, @RequestParam(defaultValue = "20")Integer pageSize)
+    public List<Spare_Parts> getAllSpareParts(@RequestParam(defaultValue = "0")Integer pageNo, @RequestParam(defaultValue = "20")Integer pageSize) throws InternalServerErrorException
     {
         List<Spare_Parts> list = spare_partsService.getAllSpareParts(pageNo,pageSize);
         return list;
     }
     @DeleteMapping("/delete")
-    public void delete(Spare_Parts spare_parts)
+    public void delete(Spare_Parts spare_parts) throws InternalServerErrorException
     {
         spare_partsService.deleteSpareParts(spare_parts);
     }
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable("id") Integer id)
+    public void deleteById(@PathVariable("id") Integer id) throws InternalServerErrorException
     {
         spare_partsService.deleteSparePartsById(id);
     }
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
-    public Spare_Parts getUserById(@PathVariable("id") Integer id)
+    public Spare_Parts getUserById(@PathVariable("id") Integer id) throws InternalServerErrorException
     {
         return  spare_partsService.getSpareParts(id);
     }
     @PutMapping("/edituser")
-    public Spare_Parts editUser(@RequestBody Spare_Parts s)
+    public Spare_Parts editUser(@RequestBody Spare_Parts s) throws InternalServerErrorException
     {
         spare_partsService.editSpareParts(s);
         return s;
