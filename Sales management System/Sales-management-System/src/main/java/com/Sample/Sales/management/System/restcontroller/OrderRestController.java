@@ -15,35 +15,35 @@ public class OrderRestController {
     private OrderService orderService;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST, headers = "Accept=application/json")
-    public Orders saveOrder(@RequestBody Orders o)
+    public Orders saveOrder(@RequestBody Orders o) throws InternalServerErrorException
     {
         orderService.CreateOrders(o);
         return o;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET, headers = "Accept=application/json")
-    public List<Orders> getAllOrders()
+    public List<Orders> getAllOrders() throws InternalServerErrorException
     {
         List<Orders> list = orderService.getAllOrders();
         return list;
     }
     @DeleteMapping("/delete")
-    public void delete(Orders orders)
+    public void delete(Orders orders) throws InternalServerErrorException
     {
         orderService.deleteOrders(orders);
     }
     @DeleteMapping("/delete/{oid}")
-    public void deleteById(@PathVariable("oid") Integer oid)
+    public void deleteById(@PathVariable("oid") Integer oid) throws InternalServerErrorException
     {
         orderService.deleteOrdersById(oid);
     }
     @RequestMapping(value = "/get/{oid}", method = RequestMethod.GET, headers = "Accept=application/json")
-    public Orders getOrdersById(@PathVariable("oid") Integer oid)
+    public Orders getOrdersById(@PathVariable("oid") Integer oid) throws InternalServerErrorException
     {
         return  orderService.getOrders(oid);
     }
     @PutMapping("/editOrders")
-    public Orders editOrders(@RequestBody Orders o)
+    public Orders editOrders(@RequestBody Orders o) throws InternalServerErrorException
     {
         orderService.editOrders(o);
         return o;
