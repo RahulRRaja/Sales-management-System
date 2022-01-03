@@ -13,9 +13,6 @@ public class Spare_Parts {
     private int id;
     @Column
     private String Spare_parts_name;
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id",referencedColumnName = "oid")
-    private List<Orders> orders;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "spare_parts_types_id",referencedColumnName = "st_id")
