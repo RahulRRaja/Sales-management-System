@@ -17,7 +17,7 @@ public class Orders {
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id",referencedColumnName = "uid")
     private User user;
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "spare_parts_id",referencedColumnName = "id")
     private List<Spare_Parts> spare_parts;
 
