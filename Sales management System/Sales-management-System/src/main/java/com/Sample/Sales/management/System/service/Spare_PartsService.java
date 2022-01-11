@@ -18,5 +18,7 @@ public interface Spare_PartsService {
     void deleteSparePartsById(Integer id);
 
     List<Spare_Parts> getAllSpareParts(Integer pageNo, Integer pageSize);
+    
+    List<Spare_Parts> getSparePartsByName(String Spare_parts_name);
 
 }
