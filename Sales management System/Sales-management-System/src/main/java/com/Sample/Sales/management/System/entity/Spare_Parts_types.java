@@ -2,7 +2,7 @@ package com.Sample.Sales.management.System.entity;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "spare_parts_types")
 @Table(name = "spare_parts_types")
 public class Spare_Parts_types {
 @Id
