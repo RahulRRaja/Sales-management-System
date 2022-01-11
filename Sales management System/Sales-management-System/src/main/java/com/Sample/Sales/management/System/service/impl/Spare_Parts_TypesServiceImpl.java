@@ -41,4 +41,8 @@ public class Spare_Parts_TypesServiceImpl implements Spare_Parts_TypesService {
     public List<Spare_Parts_types> getAllSparePartsTypes() {
         return spare_parts_typesRepository.findAll();
     }
+      @Override
+    public List<Spare_Parts_types> getSparePartsByTypeName(String Spare_Parts_types_name) {
+        return spare_parts_typesRepository.getSparePartsByTypeName(Spare_Parts_types_name);
+    }
 }
