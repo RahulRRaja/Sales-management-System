@@ -49,6 +49,10 @@ public class Spare_PartsTypeRestController {
         spare_parts_typesService.editSparePartsTypes(s);
         return s;
     }
-
+@RequestMapping(value = "/get/{Spare_parts_name}", method = RequestMethod.GET, headers = "Accept=application/json")
+    public List<Spare_Parts_types> getUserBySpareParts(@PathVariable String Spare_Parts_types_name)
+    {
+        return spare_parts_typesService.getSparePartsByTypeName(Spare_Parts_types_name);
+    }
 
 }
