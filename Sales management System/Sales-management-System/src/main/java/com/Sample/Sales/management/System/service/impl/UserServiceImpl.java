@@ -56,6 +56,13 @@ public class UserServiceImpl implements UserService {
            return new ArrayList<>();
         }
     }
+    @Override
+    public List<User> listAll(String user_name) {
+
+            return userRepository.getByUser(user_name);
+
+    }
+
 
 
 }
