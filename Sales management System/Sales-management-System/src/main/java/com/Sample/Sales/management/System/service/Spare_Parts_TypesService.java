@@ -18,5 +18,8 @@ public interface Spare_Parts_TypesService {
     void deleteSparePartsTypesById(Integer st_id);
 
     List<Spare_Parts_types> getAllSparePartsTypes();
+    
+    List<Spare_Parts_types> getSparePartsByTypeName(String Spare_Parts_types_name);
+
 
 }
