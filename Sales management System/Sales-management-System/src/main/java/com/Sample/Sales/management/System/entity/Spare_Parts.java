@@ -3,7 +3,7 @@ package com.Sample.Sales.management.System.entity;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "spare_parts")
 @Table(name = "spare_parts")
 public class Spare_Parts {
 
