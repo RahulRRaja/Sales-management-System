@@ -56,4 +56,11 @@ public class Spare_PartServiceImpl implements Spare_PartsService {
             return new ArrayList<>();
         }
     }
+    
+    @Override
+    public List<Spare_Parts> getSparePartsByName(String Spare_parts_name)
+    {
+        return spare_partsRepository.getSparePartsByName(Spare_parts_name);
+
+    }
 }
