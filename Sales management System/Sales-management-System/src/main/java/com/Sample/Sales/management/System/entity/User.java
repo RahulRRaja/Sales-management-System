@@ -3,7 +3,7 @@ package com.Sample.Sales.management.System.entity;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "user")
 @Table(name = "user")
 public class User {
 
