@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface Spare_PartsRepository extends PagingAndSortingRepository<Spare_Parts,Integer> {
+   @Query("SELECT u FROM user u WHERE u.user_name=?1")
+    public List<User> getByUser(String user_name);
+  
+  
 }
