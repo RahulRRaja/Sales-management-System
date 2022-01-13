@@ -62,6 +62,18 @@ public class UserServiceImpl implements UserService {
             return userRepository.getByUser(user_name);
 
     }
+    
+    @Override
+    public List<User> list(String first_name)
+    {
+        return userRepository.findByFirstName(first_name);
+    }
+
+    @Override
+    public List<User> lim(String last_name)
+    {
+        return userRepository.findByLastName(last_name);
+    }
 
 
 
