@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends PagingAndSortingRepository<User,Integer> {
-   @Query("SELECT u FROM user u WHERE u.user_name=?1")
+   @Query("SELECT u FROM user u WHERE u.user_name LIKE %:user_name%")
     public List<User> getByUser(String user_name);
   
 }
