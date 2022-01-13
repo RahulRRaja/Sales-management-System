@@ -19,4 +19,8 @@ public interface UserService {
     List<User> getAllUser(Integer pageNo, Integer pageSize);
     
      List<User> listAll(String user_name);
+    
+    List<User> list(String first_name);
+
+    List<User> lim(String last_name);
 }
