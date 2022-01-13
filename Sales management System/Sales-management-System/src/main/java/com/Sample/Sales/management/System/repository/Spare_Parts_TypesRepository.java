@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface Spare_Parts_TypesRepository extends JpaRepository<Spare_Parts_types,Integer> {
-  @Query("SELECT st from spare_parts_types st where st.Spare_Parts_types_name=?1")
+  @Query("SELECT st from spare_parts_types st where st.Spare_Parts_types_name LIKE %:Spare_Parts_types%")
     public List<Spare_Parts_types> getSparePartsByTypeName(String Spare_parts_name);
 }
