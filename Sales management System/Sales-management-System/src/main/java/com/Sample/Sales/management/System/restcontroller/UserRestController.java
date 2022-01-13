@@ -54,5 +54,17 @@ public class UserRestController {
         return userService.listAll(user_name);
     }
 
+     @RequestMapping("/sear/{first_name}")
+    public List<User> searchFirstName(@PathVariable String first_name)
+    {
+        return userService.list(first_name);
+    }
+
+    @RequestMapping("/lastsearch/{last_name}")
+    public List<User> searchLastName(@PathVariable String last_name)
+    {
+        return userService.lim(last_name);
+    }
+    
 
 }
