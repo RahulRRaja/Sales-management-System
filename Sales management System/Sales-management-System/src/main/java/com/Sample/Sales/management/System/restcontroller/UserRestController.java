@@ -48,7 +48,7 @@ public class UserRestController {
         userService.editUser(u);
         return u;
     }
-     @RequestMapping("/search")
+     @RequestMapping("/search/{user_name}")
     public List<User> searchUser(@PathVariable String user_name)
     {
         return userService.listAll(user_name);
